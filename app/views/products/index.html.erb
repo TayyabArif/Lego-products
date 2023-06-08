@@ -1,0 +1,109 @@
+<div class = "index">
+  <% if (@products.length === 0) %>
+    <div class="header-main">
+      <div class = "header-container">
+        <div class= "header-left">
+          <a class="link">
+            Menu
+          </a>
+          <a class="link">
+            FAQ's
+          </a>
+        </div>
+        <div class= "header-right">
+          <div class= "header-working">
+            <div class= "header-working-left">
+              <p class= "header-text1">
+                how it Works
+              </p>
+              <p class= "header-text2">
+                Just 4 easy steps
+              </p>
+            </div>
+            <%= image_tag "info.png", alt: "info Icon", class: "info-icon" %>
+          </div>
+          <div class= "header-working">
+            <div class= "header-working-left">
+              <p class= "header-text1">
+                Start Selling
+              </p>
+              <p class= "header-text2">
+                0item | £ 0.00
+              </p>
+            </div>
+            <%= image_tag "delete.png", alt: "delete Icon", class: "delete-icon" %>
+          </div>
+        </div>
+      </div>
+      <div class="header-line">
+        <div class="line-1">1</div>
+        <div class="line-2">2</div>
+        <div class="line-3">3</div>
+        <div class="line-4">4</div>
+        <div class="line-5">5</div>
+      </div>
+    <div>
+    <div class="main">
+      <%= image_tag "logo1.png", class:'logo'%>
+      <%= search_form_for @q, html: { class: "search-form" } do |f| %>
+        <div class="input-group box-shadow rounded font-family-rubik">
+          <%= f.search_field :name_cont, class: "form-control font-family-rubik border-0 search-field", placeholder: "Enter LEGO Set Code Here" %>
+          <div class="search-icon">
+            <%= image_tag "search.svg", alt: "Search Icon", class: "icon" %>
+          </div>
+        </div>
+      <% end %>
+      <div class= "main-bottom">
+        <%= image_tag "search-engine.png", alt: "Search engine Icon", class: "search-engine" %>
+        <p class="search-engine">
+          Search Help
+        </p>
+      </div>
+    </div>
+  <% end %>
+
+  <% if (@products.length > 0) %>
+    <div class="products-main">
+      <%= search_form_for @q, html: { class: "search-form-products" } do |f| %>
+        <div class="input-group box-shadow rounded font-family-rubik">
+          <%= f.search_field :name_cont, class: "form-control font-family-rubik font-size-16 border-0 search-field", placeholder: "Search for a device", data: { "turbo-action": "keyup->controller#searchAction", "controller": "controller", "action": "input->controller#doSearch", "target": "search" } %>
+          <div class="search-icon">
+            <%= image_tag "search.svg", alt: "Search Icon", class: "icon" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="products">
+        <% @products.each do |product|%>
+          <div class="product_card">
+            <div class="image_div">
+              <%= image_tag product.img_url, class: "card_image" %>
+            </div>
+            <p><%= product.name %></p>
+            <div class="button-div">
+              <%=link_to "Buy", "#", class:"button-15"%>
+              <%=link_to "Sell", "/product_condition/#{product.id}", class:"button-15"%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <% if @products.length == 0 && !@check %>
+    <div class = "not-found">
+      <p class="text-style">No product Found</p>
+      <button class="button-15" role="button">Add new one</button>
+    </div>
+  <% end %>
+
+  <div class="pagination_dev">
+    <%if @products.length > 0 %>
+    <%= will_paginate @products %>
+    <%end%>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="footer-text">
+     LEGO <sup>&reg;</sup> is the trademark of the LEGO <sup>&reg;</sup> Group of companies which does not sponsor, authorize or endorse this site
+    </p>
+  </div>
+</div>
