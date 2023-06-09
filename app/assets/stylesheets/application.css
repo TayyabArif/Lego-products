@@ -199,7 +199,7 @@ justify-content: space-evenly;
   justify-content: center;
   align-items: center;
   width: 45%;
-  margin-left: 30px;
+  margin-left: 25px;
   border: 2px solid rgb(58, 19, 229);
   border-radius: 0.7rem;
 }
@@ -370,6 +370,8 @@ button, [type=button], [type=reset], [type=submit] {
 
 .text-style {
   color: #495057;
+  font-size: 20px;
+  margin-left: 10px;
   font-family: "Rubik", sans-serif;
 }
 
@@ -483,7 +485,7 @@ button, [type=button], [type=reset], [type=submit] {
   font-family: "Rubik", sans-serif;
 }
 .logo {
-  margin-left: 80px;
+  margin-left: 75px;
   width: 50%;
 }
 
@@ -520,6 +522,7 @@ button, [type=button], [type=reset], [type=submit] {
   align-items: center;
   text-align: center;
   margin-top: 20px;
+  margin-left: 0px;
 }
 
 .search-engine {
@@ -599,11 +602,13 @@ button, [type=button], [type=reset], [type=submit] {
   margin: 0px;
   font-weight: 700;
   font-size: 14px;
+  color: #f51482;
 }
 
 .header-text2 {
   margin: 0px;
   font-size: 12px;
+  color: #f51482;
 }
 
 .header-line {
@@ -776,6 +781,16 @@ button, [type=button], [type=reset], [type=submit] {
   border-radius: 0.7rem;
   padding: 20px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.trademark-logo {
+  position: absolute;
+  top: 33%;
+  left: 45.7%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #888;
+  opacity: 0.4;
 }
 
 .link {

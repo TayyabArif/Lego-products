@@ -47,7 +47,7 @@
       <%= image_tag "logo1.png", class:'logo'%>
       <%= search_form_for @q, html: { class: "search-form" } do |f| %>
         <div class="input-group box-shadow rounded font-family-rubik">
-          <%= f.search_field :name_cont, class: "form-control font-family-rubik border-0 search-field", placeholder: "Enter LEGO Set Code Here" %>
+          <%= f.search_field :name_cont, id: "search-input", class: "form-control font-family-rubik border-0 search-field", placeholder: "Enter LEGO® Set Code Here" %>
           <div class="search-icon">
             <%= image_tag "search.svg", alt: "Search Icon", class: "icon" %>
           </div>
@@ -66,7 +66,7 @@
     <div class="products-main">
       <%= search_form_for @q, html: { class: "search-form-products" } do |f| %>
         <div class="input-group box-shadow rounded font-family-rubik">
-          <%= f.search_field :name_cont, class: "form-control font-family-rubik font-size-16 border-0 search-field", placeholder: "Search for a device", data: { "turbo-action": "keyup->controller#searchAction", "controller": "controller", "action": "input->controller#doSearch", "target": "search" } %>
+          <%= f.search_field :name_cont, class: "form-control font-family-rubik font-size-16 border-0 search-field", placeholder: "Enter LEGO® Set Code Here" %>
           <div class="search-icon">
             <%= image_tag "search.svg", alt: "Search Icon", class: "icon" %>
           </div>
@@ -91,7 +91,6 @@
   <% if @products.length == 0 && !@check %>
     <div class = "not-found">
       <p class="text-style">No product Found</p>
-      <button class="button-15" role="button">Add new one</button>
     </div>
   <% end %>
 
