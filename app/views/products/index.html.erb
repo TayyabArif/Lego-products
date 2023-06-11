@@ -44,17 +44,17 @@
       </div>
     <div>
     <div class="main">
-      <%= image_tag "logo1.png", class:'logo'%>
-      <%= search_form_for @q, html: { class: "search-form" } do |f| %>
-        <div class="input-group box-shadow rounded font-family-rubik">
-          <%= f.search_field :name_cont, id: "search-input", class: "form-control font-family-rubik border-0 search-field", placeholder: "Enter LEGO® Set Code Here" %>
+      <%= image_tag "logo10.png", class:'logo'%>
+      <%= search_form_for @q, html: { class: "search-form-main" } do |f| %>
+        <div class="input-group-main box-shadow rounded font-family-rubik">
+          <%= f.search_field :name_cont, id: "search-input", class: "form-control-main font-family-rubik border-main search-field-main", placeholder: "Enter LEGO® Set Code Here" %>
           <div class="search-icon">
             <%= image_tag "search.svg", alt: "Search Icon", class: "icon" %>
           </div>
         </div>
       <% end %>
       <div class= "main-bottom">
-        <%= image_tag "search-engine.png", alt: "Search engine Icon", class: "search-engine" %>
+        <%= image_tag "engine1.png", alt: "Search engine Icon", class: "search-engine" %>
         <p class="search-engine">
           Search Help
         </p>
@@ -66,7 +66,7 @@
     <div class="products-main">
       <%= search_form_for @q, html: { class: "search-form-products" } do |f| %>
         <div class="input-group box-shadow rounded font-family-rubik">
-          <%= f.search_field :name_cont, class: "form-control font-family-rubik font-size-16 border-0 search-field", placeholder: "Enter LEGO® Set Code Here" %>
+          <%= f.search_field :name_cont, class: "form-control-main font-family-rubik font-size-16 border-main search-field-main", placeholder: "Enter LEGO® Set Code Here" %>
           <div class="search-icon">
             <%= image_tag "search.svg", alt: "Search Icon", class: "icon" %>
           </div>

@@ -10,7 +10,7 @@ module CsvToDb
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    config.hosts << "50c8-123-108-92-217.ngrok-free.app"
+    config.hosts << "9700-119-73-112-17.ngrok-free.app"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

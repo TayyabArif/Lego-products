@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "products#index"
   resources :products
   get '/product_condition/:id', to: 'products#price_condition'
+  get '/form/:id/:condition', to: 'products#information_form'
 end

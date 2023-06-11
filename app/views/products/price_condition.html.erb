@@ -33,7 +33,9 @@
           </div>
         </div>
       </div>
-      <button class="button-15" role="button" style="width: 100%; margin-top: 20px;">Get Price</button>
+      <button class="button-15" role="button" style="width: 100%; margin-top: 20px;">
+        <%=link_to "Get Price", "/form/#{@product.id}", class:"get_price_button"%>
+      </button>
     </div>
   </div>
   <div class="choose-main">
@@ -92,3 +94,26 @@
 </div>
 <div id="cost-display">
 </div>
+
+<script type="text/javascript">
+  var condition = "Good"; // variable to store the product condition
+
+  $(document).ready(function() {
+    $('.buttons-container button').on('click', function() {
+      $('.buttons-container button').removeClass('btn-container').addClass('btn-container-unselect');
+
+      $(this).removeClass('btn-container-unselect').addClass('btn-container');
+
+      condition = $.trim($(this).text());
+      $('.option-text-right').text(condition)
+    });
+
+    // Intercept the click on the Get Price button
+    $('.get_price_button').on('click', function(e) {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      href += '/' + condition;
+      location.href = href;
+    });
+  });
+</script>

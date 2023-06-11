@@ -1,0 +1,140 @@
+<div id="page-content", class="information-page">
+  <div class="row custom-style">
+    <p class="hearder-text">We can pay you <%= @price %>£</p>
+  </div>
+  <div class="card w-75 p-4 m-4 shadow-sm border-0 rounded" >
+      <h4 class="mb-sm-4 ml-sm-2">Your Detail</h4>
+      <section class="staric">
+          <%= form_tag do %>
+              <div class="field form-group row mt-3">
+                  <%= label_tag :firstame, "First Name", class:"col-sm-2 col-form-label" %>
+                  <div class= "col-sm-10">
+                      <%= text_field :title, nil,class:"form-control1 editor-width", placeholder:"First name"%>
+                  </div>
+              </div>
+              <div class="field form-group row mt-3">
+                  <%= label_tag :secondName, "Second Name", class:"col-sm-2 col-form-label" %>
+                  <div class= "col-sm-10">
+                      <%= text_field :title, nil,class:"form-control1 editor-width", placeholder:"Second name"%>
+                  </div>
+              </div>
+              <div class="field form-group row mt-3">
+                  <%= label_tag :email, "Email", class:"col-sm-2 col-form-label" %>
+                  <div class= "col-sm-10">
+                      <%= text_field :title, nil,class:"form-control1 editor-width",placeholder:"Email"%>
+                  </div>
+              </div>
+
+              <div class="field form-group row mt-3">
+                  <%= label_tag :Address, "Address", class:"col-sm-2 col-form-label" %>
+                  <div class= "col-sm-10">
+                      <%= text_field :title, nil,class:"form-control1 editor-width", placeholder:"Address"%>
+                  </div>
+              </div>
+          <% end %>
+      </section>
+      <div class="col-2"></div>
+
+      <div class="col-8 ml-sm-2 ml-md-4 mt-sm-3 form-check mt-3">
+        <input class="form-check-input" type="checkbox" id="exampleCheckbox">
+        <label class="form-check-label" for="exampleCheckbox">
+          In order to complete your order we may need to contact you, </br>
+          please check here to agree to this. We might also contact you
+          </br>with occasional updates and offers.
+          <small class="ml-ms-2 " >
+              <li>You can unsubscribe at any time by visiting 'My Account' </li>
+              <li>Subject to our Privacy Policy</li>
+          </small>
+      </label>
+      </div>
+      <h4 class="mt-sm-5"> Address Details</h4>
+      <p>Start typing your address or enter your postcode</p>
+
+      <div class="field form-group row staric">
+            <%= label_tag :addresssearch, "Address Search", class:"col-sm-2 col-form-label" %>
+        <div class= "col-sm-10">
+            <%= text_field :title, nil,class:"form-control editor-width",placeholder:"Enter passcode orstart of your code"%>
+        </div>
+      </div>
+  </div>
+
+
+  </div>
+
+  <div wire:id="iXFef552Ls1k8CLNEGVq" x-data="bank_details" class="card-body bg-bank-details-blue rounded border-grey-ssl col-12 my-5 custom-card" style="background: #E9EDF2">
+    <div class="row align-items-start">
+        <div class="col-8 mt-3">
+            <h1 class="card-title font-size-18 mb-0">Bank Details <span class="d-none d-md-inline-block"> – How you’ll get paid</span></h1>
+            <p class="d-md-none"> - How you’ll get paid</p>
+        </div>
+    </div>
+
+
+    <div class="row align-items-center">
+        <div class="col-12 mt-2">
+            <div class="d-flex align-items-center ">
+                <div class="px-2">
+                    <img src="https://webuyanyphone.com/images/app/secure/verified_opsz48.svg" style="max-width: 18px" alt="">
+                </div>
+                <div class="line-height-1">
+                    <span x-show="total > 0" class="font-size-13" style="">We’ll Pay <span class="text-blue font-size-13">£</span><span class="text-blue font-size-13" x-html="total">305</span> into your bank account</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center ">
+        <div class="col-12 mt-2">
+            <div class="d-flex align-items-center ">
+                <div class="px-2">
+                    <img src="https://webuyanyphone.com/images/app/secure/verified_opsz48.svg" style="max-width: 18px;" alt="">
+                </div>
+                <div class="line-height-1">
+                    <span class="font-size-13">Your details are used to make payment to you</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-12 mt-2">
+            <div class="d-flex align-items-center ">
+                <div class="px-2">
+                    <img src="https://webuyanyphone.com/images/app/secure/verified_opsz48.svg" style="max-width: 18px" class=""></div>
+                <div class="line-height-1">
+                    <span class="font-size-13">All details are deleted after payment has been made</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form-group form-row align-items-center mb-3">
+      <div class="col mt-4">
+        <input id="account_name" placeholder="Account Name" class="form-control1 font-size-16 " type="text"
+          wire:model.lazy="bank_details.account_name" ps-name-field-id="c03a6bc4-6040-4177-9c3d-6292c4bbace8">
+      </div>
+    </div>
+
+    <div class="row form-group form-row mb-3">
+      <div class="col 12 col-sm-6">
+
+        <input id="sort_code" maxlength="6" onkeypress="if(this.value.length==6) return false;" class=" font-size-16 w-100"
+          pattern="[^0-9]*" inputmode="numeric" placeholder="Sort Code" style="padding: 0.375rem 0.75rem;"
+          wire:model.lazy="bank_details.sort_code">
+      </div>
+    </div>
+
+    <div class="row form-group form-row align-items-center ">
+      <div class="col-12 col-sm-6">
+        <input id="account_number" style="padding: 0.375rem 0.75rem;" placeholder="Account Number"
+          class=" font-size-16 w-100" pattern="[0-9]*" inputmode="numeric" type="number"
+          wire:model.lazy="bank_details.account_number">
+      </div>
+      <div class="col-12 mt-3 mt-lg-0 col-lg-6 text-right">
+        <button class="btn w-100 font-weight-medium py-2 ml-auto text-center align-items-center"
+          style="padding-top: 0.8rem !important; padding-bottom: 0.8rem !important; background: #01427B; color: #FFFFFF"
+          wire:click.prevent="bankAccountCheck" wire:loading.class="bg-grey"
+          ps-submit-button-id="ea47751a-abde-4e73-ab0a-69a625a01171">
+          <i class="fal fa-lock-alt mr-1 mr-xl-2 "></i>
+          VERIFY DETAILS
+        </button>
+      </div>
+    </div>
+    </div>
